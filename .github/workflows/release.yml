@@ -31,4 +31,4 @@ jobs:
       - name: Publish
         uses: softprops/action-gh-release@v0.1.14
         with:
-          files: "wintop-$tag-win-x64"
+          files: "wintop-${{ env.tag }}-win-x64"
