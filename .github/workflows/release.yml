@@ -22,7 +22,7 @@ jobs:
         run: |
           tag=$(git describe --tags --abbrev=0)
           release_name="wintop-$tag-win-x64"
-          echo "version=$(eval $tag)" >> $GITHUB_ENV
+          echo "version=$tag" >> $GITHUB_ENV
           # Build everything
           dotnet publish wintop.csproj --framework net5.0 --runtime "win-x64" -c Release -o "$release_name" --self-contained True -p:PublishSingleFile=True -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishTrimmed=True -p:TrimMode=Link -p:DebugType=None -p:DebugSymbols=False
           # Pack files
